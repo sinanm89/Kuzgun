@@ -1,15 +1,3 @@
 *.pyc
-*.mp4
-*.avi
-*.jpg
-*.gif
-*.jpeg
-*.png
-*.mkv
-*.3gp
-*.m4v
-*.mov
-*.mpeg
-*.mpg
-*.wmv
+media/*
 *.sql
