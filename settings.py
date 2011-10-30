@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'kuzgun.list',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'kuzgun.frontpage',
 )
 
 # A sample logging configuration. The only tangible logging
