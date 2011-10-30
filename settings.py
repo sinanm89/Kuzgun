@@ -1,5 +1,5 @@
 ####
-PROJECT_DIRECTORY = '/home/yigit/Projeler/kuzgun/'
+PROJECT_DIRECTORY = '/Users/snn/Documents/kuzgun/'
 ####
 
 DEBUG = True
