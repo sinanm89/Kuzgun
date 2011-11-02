@@ -1,11 +1,36 @@
-{% extends "base.html" %}
+{% extends "frontpage/index.html" %}
 
-{%block body%}
+{%block icerik%}
 
-	<h1>{{video.name}}</h1>
-	<video width="320" height="240" controls="controls">
+	<!--<video width="320" height="240" controls="controls">
 		<source src="/media/{{video.video}}"/>
   		Your browser does not support the video tag.
 	</video>
+-->
 
+
+  <script type="text/javascript" charset="utf-8">
+    // Add VideoJS to all video tags on the page when the DOM is ready
+    VideoJS.setupAllWhenReady();
+  </script>
+
+
+
+
+  <div class="video-js-box">
+    <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
+    <video class="video-js" width="640" height="264" controls preload poster="/media/{{video.thumbnail}}">
+     <source src="/media/{{video.video}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+      <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
+      <object class="vjs-flash-fallback" width="640" height="264" type="application/x-shockwave-flash"
+        data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+        <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+        <param name="allowfullscreen" value="true" />
+        <param name="flashvars" value='config={"playlist":["/media/{{video.thumbnail}}", {"url": "http://127.0.0.1:8000/media/{{video.video}}","autoPlay":false,"autoBuffering":true}]}' />
+        <!-- Image Fallback. Typically the same as the poster image. -->
+        <img src="/media/{{video.thumbnail}}" width="640" height="264" alt="Poster Image"
+          title="No video playback capabilities." />
+      </object>
+    </video>
+</div>
 {% endblock %}
