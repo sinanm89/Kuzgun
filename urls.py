@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     # url(r'^kuzgun/', include('kuzgun.foo.urls')),
                           url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                           url(r'^admin/', include(admin.site.urls)),
-                          url(r'^watch/','watch.views.watch_latest'),
+                          url(r'^watch_latest/','watch.views.watch_latest'),
                           url(r'^$','frontpage.views.frontpage'),
 )
 
