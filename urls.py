@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     # url(r'^kuzgun/', include('kuzgun.foo.urls')),
                           url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                           url(r'^admin/', include(admin.site.urls)),
-                          url(r'^watch/','watch.views.watch'),
+                          url(r'^watch/','watch.views.watch_latest'),
                           url(r'^$','frontpage.views.frontpage'),
 )
 
@@ -22,3 +22,6 @@ if settings.DEBUG:
             'document_root': settings.MEDIA_ROOT,
         }),
    )
+
+#Static files
+urlpatterns += staticfiles_urlpatterns()   
