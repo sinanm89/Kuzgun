@@ -11,7 +11,7 @@ urlpatterns = patterns('',
                        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^watch_latest/','watch.views.watch_latest'),
-                       url(r'^episode/(?P<program_name>[a-z]+)/(?P<episode_number>\d+)$', 'videos.video'),
+                       url(r'^episode/([a-zA-Z0-9\w\ ]+)/(\d+)', 'videos.views.video'),
 
                        url(r'^$','frontpage.views.frontpage'),
 )

@@ -2,7 +2,7 @@ body{
     width: 100%;
     margin:0;
     height: 100%;
-    background-color: #434232;
+    background-color: #000;
 }
 
 #all{
@@ -20,13 +20,14 @@ body{
 }
 
 #wrapper{
-    background-color: #231321;
+    background-color: #000;
     height:600px;
+    border-bottom: 2px solid white;
 }
 
 #video{
     width: 70%;
-    background-color: #321321;
+    background-color: #000;
     float:left;
     height:600px;
 
@@ -34,7 +35,7 @@ body{
     
 #sidebar{
     width: 30%;
-    background-color: #434232;
+    background-color: #000;
     float:left;
     height:600px;
 
