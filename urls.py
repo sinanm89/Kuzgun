@@ -8,10 +8,12 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'kuzgun.views.home', name='home'),
     # url(r'^kuzgun/', include('kuzgun.foo.urls')),
-                          url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-                          url(r'^admin/', include(admin.site.urls)),
-                          url(r'^watch_latest/','watch.views.watch_latest'),
-                          url(r'^$','frontpage.views.frontpage'),
+                       url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^watch_latest/','watch.views.watch_latest'),
+                       url(r'^episode/(?P<program_name>[a-z]+)/(?P<episode_number>\d+)$', 'videos.video'),
+
+                       url(r'^$','frontpage.views.frontpage'),
 )
 
 
