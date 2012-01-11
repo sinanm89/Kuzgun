@@ -40,4 +40,8 @@ def networks(request):
 def video(request, program_name, episode_number):
     program = Program.objects.get(name = program_name)
     video = Video.objects.get(program = program, episode_number = episode_number)
+    video.view_count = video.view_count + 1
+    video.save()
     return locals()
+
+

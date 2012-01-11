@@ -77,6 +77,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    
 )
 
 # List of finder classes that know how to find static files in
@@ -112,6 +113,14 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     PROJECT_DIRECTORY + 'templates'
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "kuzgun.context_processors.latest_videos.latest_videos",
+    "django.core.context_processors.auth", 
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media", 
 )
 
 INSTALLED_APPS = (
@@ -152,3 +161,4 @@ LOGGING = {
         },
     }
 }
+STATIC_URL = '/static/'

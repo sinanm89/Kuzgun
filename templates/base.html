@@ -8,14 +8,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<!-- Frontpage css -->
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/frontpagecss.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/frontpagecss.css" />
 
 
 	<!--VideoJS js-->
-	<script src="{{ STATIC_URL }}js/video.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/video.js" type="text/javascript" charset="utf-8"></script>
 	
 	<!--VideoJS css -->
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/video-js.css" type="text/css" media="screen" title="Video JS" charset="utf-8">
+	<link rel="stylesheet" href="/static/css/video-js.css" type="text/css" media="screen" title="Video JS" charset="utf-8">
 
 	
 	<title>	
@@ -45,7 +45,7 @@
 	  </div>
 	  <div id="sidebar">
 	    {% block sidebar %}
-	     TABLAR
+	    {% include "sidebar.html" %}
 	    {% endblock %}
 	  </div>
 	</div>

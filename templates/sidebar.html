@@ -1,0 +1,7 @@
+<ul>
+ {% for video in videos %}
+ <li>
+   <a href="/episode/{{video.program}}/{{video.episode_number}}"  >  <img width="80" height="50" src="/media/{{video.thumbnail}}"> {{video.name}}</a> View Count: {{ video.view_count }}
+</li>
+  {% endfor %}
+</ul>
