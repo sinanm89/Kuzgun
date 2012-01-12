@@ -40,25 +40,24 @@
 									<!-- Second Tab -->
 									<!-- Hiyerarsiye oturan basamakli linkler ustune gelince gozukuyor -->
 			<ul class=networktab>
-				<li> <a>{{ Network.name }}</a>
-				<!-- URL FORMAT -->
-					<ul class=channeltab>
-						<li> 
-							<a>{{ Channel.name }}</a>
-							<ul class=programtab>
-								<il>
-									<a>{{ Program.name }}</a>
-									<ul class=videotab>
-										<li>
-											<a>{{ video.name }}</a>
-										</li>
-									</ul>
-								</il>
-							</ul>
-						</li>
-					</ul>
+				<li> <h2>Networks</h2> </li>
+				<li> <a>{{ Network.name }}</a> </li>
 				
-				</li>
+					<ul class=channeltab>
+						<li> <h2>Channels</h2> </li>
+						<li> <a>{{ Channel.name }}</a> </li>
+				
+							<ul class=programtab>	
+								<il> <h2>Programs</h2> </li>
+								<li><a>{{ Program.name }}</a></li>
+								
+									<ul class=videotab>
+										<li> <h2>Videos</h2> </li>
+										<li><a>{{ video.name }}</a></li>
+
+									</ul>
+							</ul>
+					</ul>
 			</ul>
 			{% endfor %}
 			
