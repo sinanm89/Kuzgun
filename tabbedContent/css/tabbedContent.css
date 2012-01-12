@@ -71,9 +71,32 @@
 	color: #ffffff;
 }
 
-.verticaltab ul{
+.networktab ul{
 display:none;
 }
-.verticaltab:hover ul {
+.networktab:hover ul {
+display:block;
+}
+
+.networktab .channeltab ul{
+display:none;
+}
+
+.networktab .channeltab:hover ul {
+display:block;
+}
+
+.networktab .channeltab .programtab ul{
+display:none;
+}
+.networktab .channeltab .programtab:hover ul {
+display:block;
+}
+
+.networktab .channeltab .programtab .videotab ul{
+display:none;
+}
+
+.networktab .channeltab .programtab .videotab:hover ul {
 display:block;
 }

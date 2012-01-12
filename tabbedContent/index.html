@@ -34,27 +34,27 @@
 			<ul>
 				<li> <a href="kuzgun.com/video/a.avi"> {{ Video.name }} </a> 
 				<!-- URL FORMAT -->
+				<!-- En son eklenen videolar buraya geliyor -->
 				</li>
 			</ul>
 									<!-- Second Tab -->
-			<ul class=verticaltab>
+									<!-- Hiyerarsiye oturan basamakli linkler ustune gelince gozukuyor -->
+			<ul class=networktab>
 				<li> <a>{{ Network.name }}</a>
 				<!-- URL FORMAT -->
-					<ul>
-						<li>
-						sinan
-						</li>
-						
-						<li>
-						ali
-						</li>
-						
-						<li>
-						cem
-						</li>
-						
-						<li>
-						can
+					<ul class=channeltab>
+						<li> 
+							<a>{{ Channel.name }}</a>
+							<ul class=programtab>
+								<il>
+									<a>{{ Program.name }}</a>
+									<ul class=videotab>
+										<li>
+											<a>{{ video.name }}</a>
+										</li>
+									</ul>
+								</il>
+							</ul>
 						</li>
 					</ul>
 				
