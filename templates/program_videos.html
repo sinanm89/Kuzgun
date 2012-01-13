@@ -2,8 +2,17 @@ Episodes list for {{program.name}}:
 
 <ul>
 {% for video in videos %}
- <li onclick="javascript:video('{{video.program}}','{{video.episode_number}}')">
-   <img width="80" height="50" src="/media/{{video.thumbnail}}"> {{video.name}} View Count: {{ video.view_count }}
+ <li onclick="javascript:video('{{video.program}}','{{video.episode_number}}','{{video.name}}')">
+
+  <div style="width:420px;clear:both;">
+    <div style="width:320px;float:left;">   <img width="320" height="180" src="{{video.video.url_320x180}}"> 
+</div>
+    <div style="width:95px; padding-left:4px; float:left;">
+      {{video.name}}
+      <br/>
+      <span style="font-size:0.7em;">View Count: {{ video.view_count }}</span>
+    </div>
+  </div> 
 </li>
 
 {% endfor %}

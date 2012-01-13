@@ -3,6 +3,20 @@ body{
     margin:0;
     height: 100%;
     background-color: #000;
+    list-style-type:none;
+}
+
+ul{
+list-style-type:none;
+}
+
+#loggedin{
+    width:200px;
+    float:right;
+}
+#favlikebox{
+    width:400px;
+    float:right;
 }
 
 #all{
@@ -16,7 +30,7 @@ body{
 
 #top{
     height:100px;
-    background-color: #442322;
+    background-color: #000;
 }
 
 #wrapper{
@@ -36,9 +50,9 @@ body{
     
 #sidebar{
     width: 30%;
-
+    
     background-color: #000;
     float:left;
     height:600px;
-
+    overflow-y:scroll;
 }

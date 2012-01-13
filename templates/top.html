@@ -1,11 +1,13 @@
 {% if user.is_authenticated %}
 {% block loggedin %}
+<div id="loggedin">
 logged in as {{user}}
-{% if video.name %}
-<a href="/fav/{{program.name}}">fav</a>
-<a href="/like/{{video.name}}">like</a>
-{% endif %}
 <a href="/logout">logout</a>
+</div>
+<div id="favlikebox" style="display:hidden;">
+</div>
+
+
 {% endblock %}
 
 {% else %}

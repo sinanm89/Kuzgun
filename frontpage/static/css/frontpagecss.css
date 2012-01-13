@@ -1,8 +1,26 @@
 body{
+    color:#fff;
+    background:url('/static/img/colorborder.gif');
+    background-repeat:repeat-x;
     width: 100%;
     margin:0;
     height: 100%;
     background-color: #000;
+    list-style-type:none;
+    font-family:"Lucida Grande",Sans,"Lucida Sans Unicode","Lucida Sans",Verdana;
+}
+
+ul{
+list-style-type:none;
+}
+
+#loggedin{
+    width:200px;
+    float:right;
+}
+#favlikebox{
+    width:400px;
+    float:right;
 }
 
 #all{
@@ -15,30 +33,28 @@ body{
 }
 
 #top{
+    padding-top:30px;
     height:100px;
-    background-color: #442322;
 }
 
 #wrapper{
     color: #fff;
-    background-color: #000;
     height:600px;
     border-bottom: 2px solid white;
 }
 
 #video{
-    width: 70%;
-    background-color: #000;
+    width: 75%;
     float:left;
     height:600px;
 
 }
     
 #sidebar{
-    width: 30%;
-
+    width: 25%;
+    
     background-color: #000;
     float:left;
     height:600px;
-
+    overflow-y:scroll;
 }

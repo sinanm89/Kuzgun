@@ -3,7 +3,13 @@ Channels list for {{network.name}}:
 
 <ul>
 {% for channel in channels %}
-<li onclick="javascript:programs('{{channel}}');">{{channel.name}}</li>
+<li onclick="javascript:programs('{{channel}}');">
+  <div style="width:300px;">
+    <div style="width:200px;float:left;"><img width="200" src="/media/{{channel.logo}}"/></div>
+    <div style="width:95px; padding-left:4px; float:left;">{{channel.name}}</div>
+  </div>
+
+</li>
 {% endfor %}
 </ul>
 </div>
