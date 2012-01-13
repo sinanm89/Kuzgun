@@ -1,7 +1,45 @@
+Latest Videos
+
+{% comment %}
 <ul>
  {% for video in videos %}
  <li>
-   <a href="/episode/{{video.program}}/{{video.episode_number}}"  >  <img width="80" height="50" src="/media/{{video.thumbnail}}"> {{video.name}}</a> View Count: {{ video.view_count }}
+   <a href="/episode/{{video.program}}/{{video.episode_number}}"  >  <img width="80" height="50" src="{{video.video.url_80x45}}"> {{video.name}}</a> View Count: {{ video.view_count }}
 </li>
   {% endfor %}
 </ul>
+{% endcomment %}
+
+<ul>
+ {% for video in videos %}
+ <li onclick="javascript:video('{{video.program}}','{{video.episode_number}}')">
+   <img width="80" height="45" src="{{video.video.url_80x45}}"> {{video.name}} View Count: {{ video.view_count }}
+</li>
+  {% endfor %}
+</ul>
+
+
+
+{% if user.is_authenticated %}
+My Favourite Programs
+<ul>
+  {% for fav in favs %}
+  <li onclick="javascript:videos('{{fav.program}}')">
+    <img src="/media/{{fav.program.logo}}" width="80" height="45"/> {{fav.program}}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if user.is_authenticated %}
+Liked Videos
+<ul>
+  {% for like in likes %}
+  <li>
+    <a href ="/episode/{{like.video.program}}/{{like.video.episode_number}}"> <img width="80" height="45" src="{{like.video.url_80x45}}"/> {{like.video.program}} {{like.video.name}}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+

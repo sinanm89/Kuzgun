@@ -1,29 +1,33 @@
+{% comment %}
 {% extends "base.html" %}
 
 {%block video%}
-
+{% endcomment %}
 
   <script type="text/javascript" charset="utf-8">
     // Add VideoJS to all video tags on the page when the DOM is ready
     VideoJS.setupAllWhenReady();
+
   </script>
 
 
 
 
-  <div class="video-js-box" width="100%" style="width:100%;">
+  <div class="video-js-box" width="100%" height="100%" style="width:100%;height:100%;">
     <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
-    <video class="video-js" controls preload poster="/media/{{video.thumbnail}}"  style="width:100%; height:100%" width="100%">
-     <source src="/media/{{video.video}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+    <video class="video-js" autoplay controls preload poster="{{video.video.url_320x180}}"  style="width:100%;" height="100%"   width="100%">
+     <source src="{{video.video.url}}" type="video/{{video.type}}" />
       <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
-      <object class="vjs-flash-fallback" width="100%" type="application/x-shockwave-flash"  style="width:100%;"
+      <object class="vjs-flash-fallback" width="100%"  height="100%"  type="application/x-shockwave-flash"  style="width:100%;"
         data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
         <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
         <param name="allowfullscreen" value="true" />
-        <param name="flashvars" value='config={"playlist":["/media/{{video.thumbnail}}", {"url": "http://127.0.0.1:8000/media/{{video.video}}","autoPlay":false,"autoBuffering":true}]}' />
+        <param name="flashvars" value='config={"playlist":["{{video.video.url_320x180}}", {"url": "http://127.0.0.1:8000{{video.video.url}}","autoPlay":true,"autoBuffering":true}]}' />
         <!-- Image Fallback. Typically the same as the poster image. -->
-        <img src="/media/{{video.thumbnail}}"  style="width:100%;" alt="Poster Image" width="100%" title="No video playback capabilities." />
+        <img src="{{video.video.url_320x180}}"  style="width:100%;" alt="Poster Image" width="100%" title="No video playback capabilities." />
       </object>
     </video>
 </div>
+{% comment %}
 {% endblock %}
+  {% endcomment %}

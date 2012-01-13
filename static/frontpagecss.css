@@ -1,0 +1,118 @@
+body {
+		background-color: black;	
+	}
+	
+	#adem {
+		border-radius:26px;  		/*Border content*/
+		-moz-border-radius:26px;
+		-webkit-border-radius:26px;
+
+		padding-left: 40px; 
+		padding-right: 40px;
+		padding-bottom: 40px;
+		padding-top:40px;
+		
+		margin-left: 80px;			/*Box Placement*/
+		margin-right:80px;
+		margin-top:40px;
+		
+		background-image: url(frontpageimg/pinstripes.png);
+		position:relative;
+		background-origin:initial;
+		background-position:initial initial;
+		background-repeat:initial initial;
+	}
+	
+	#ISIM{
+		border-radius:26px; 		/*border content*/
+		-moz-border-radius:26px;
+		-webkit-border-radius:26px;
+		
+		
+		padding-left:40px;			/*text placement*/
+		padding-right:40px;
+		padding-top:2px;
+		padding-bottom:2px;
+		
+		margin-left: 80px;			/*Box Placement*/
+		margin-right:80px;
+		margin-top:40px;
+		
+		color:rgba(20,20,20,0.7);
+		text-shadow:rgba(255,255,255,0.7) 0 1px 0;
+		font-weight:bold;
+		
+		text-align:center;
+		font-family:helvetica;
+		
+		background-image: url(frontpageimg/pinstripes.png);
+		background-origin:initial;
+		background-position:initial initial;
+		background-repeat:initial initial;
+		
+		text-shadow:rgba(255, 255, 255, 1) 0 1px 0;
+		
+	}
+	
+	#bilgikutusu ul{
+	
+		margin:0;
+		padding:0;
+		list-style-type:none;
+		text-align:center;
+			
+	}
+	
+	#bilgikutusu ul li {display:inline}  /* horizontal */
+	
+	#bilgikutusu ul li a{
+			
+		font-size:16px;
+		font-weight:bold;
+			
+		font-family:helvetica;
+		text-decoration: none;
+		color:inherit;
+		
+		text-shadow:rgba(255, 255, 255, 0.6) 0 1px 0;
+		
+		/*
+		border-image:url(whitebutton.png) 0 12 0 12 stretch stretch;
+		-moz-border-image:url(whiteButton.png) 0 12 0 12 stretch stretch;
+		-webkit-border-image:url(whiteButton.png) 0 12 0 12 stretch stretch;
+		
+					
+		border-bottom-width:0;
+		border-left-width:12px;
+		border-right-width:12px;
+		border-top-width:0;
+		 */
+		 
+		background-color:rgba(200,200,200,0.3);
+		border-radius:26px; 		/*border content*/
+		-moz-border-radius:26px;
+		-webkit-border-radius:26px;
+		
+		font-size:20px;
+		font-weight:bold;
+		padding-bottom:10px;
+		padding-left:10px;
+		padding-right:10px;
+		padding-top:10px;
+	
+	}
+	#bilgikutusu ul li a:hover{
+		
+		color:#fefefe;
+		-webkit-border-image:url(frontpageimg/whiteButton.png) 0 12 0 12 stretch stretch;
+		border-bottom-width:0;
+		border-left-width:12px;
+		border-right-width:12px;
+		border-top-width:0px;
+		
+	}
+	.bilgiyazisi
+{
+		color:rgba(20,20,20,0.75);
+		text-shadow:rgba(255,255,255,0.7) 0 1px 0;
+	}

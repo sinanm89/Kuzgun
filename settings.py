@@ -117,7 +117,10 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "kuzgun.context_processors.latest_videos.latest_videos",
-    "django.core.context_processors.auth", 
+    "kuzgun.context_processors.likes.likes",
+    "kuzgun.context_processors.favourites.favourites",
+    "kuzgun.context_processors.networks.networks",
+    "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media", 
@@ -130,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
     'kuzgun.videos',
     'kuzgun.profile',
     'kuzgun.watch',
@@ -161,4 +165,6 @@ LOGGING = {
         },
     }
 }
+
+
 STATIC_URL = '/static/'

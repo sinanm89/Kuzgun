@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from kuzgun import videothumbs
 
 class Network(models.Model):
     """ About the network """
@@ -43,14 +44,15 @@ class Video(models.Model):
     program = models.ForeignKey(Program)
     name = models.CharField(max_length = 20, verbose_name = "Name of the Video")
     episode_number = models.IntegerField(max_length=4, verbose_name = "Which episode in series")
-    thumbnail = models.ImageField(upload_to='thumbnails')
-    pub_date = models.DateTimeField(auto_now = True,verbose_name = "Date of release")
+    #thumbnail = models.ImageField(upload_to='thumbnails',null = True)
+    pub_date = models.DateTimeField(auto_now_add = True,verbose_name = "Date of release")
     duration = models.IntegerField(max_length = 6, verbose_name = "Duration in seconds")
-    view_count = models.IntegerField(max_length = 7, verbose_name = "Number of views")
+    view_count = models.IntegerField(max_length = 7, verbose_name = "Number of views", default=0)
     publisher = models.ForeignKey(User)
-    last_watched = models.DateTimeField(verbose_name = "Last watched on")
-    video = models.FileField(upload_to='videos')
+    last_watched = models.DateTimeField(verbose_name = "Last watched on", auto_now = True)
+    #video = models.FileField(upload_to='videos')
 
+    video = videothumbs.VideoThumbField(upload_to='videos/', sizes = ((80,45),(320,180),))
     def __unicode__(self):
         return self.name
 

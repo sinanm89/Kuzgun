@@ -28,7 +28,7 @@ def channel_programs(request, channel_name):
 @rendered_with('network_channels.html')
 def network_channels(request, network_name):
     network = Network.objects.get(name = network_name)
-    channels = Channel.objects.get(network = network)
+    channels = Channel.objects.filter(network = network)
     return locals()
 
 @rendered_with('networks.html')
@@ -42,6 +42,11 @@ def video(request, program_name, episode_number):
     video = Video.objects.get(program = program, episode_number = episode_number)
     video.view_count = video.view_count + 1
     video.save()
+    video.path = unicode(video.video)
+    video.type = video.path.split(".")[-1]
+    if video.type == "ogv":
+        video.type = "ogg"
+
     return locals()
 
 

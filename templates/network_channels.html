@@ -1,0 +1,9 @@
+<div id="programs_list">
+Channels list for {{network.name}}:
+
+<ul>
+{% for channel in channels %}
+<li onclick="javascript:programs('{{channel}}');">{{channel.name}}</li>
+{% endfor %}
+</ul>
+</div>

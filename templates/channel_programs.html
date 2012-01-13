@@ -1,0 +1,10 @@
+<div id="videos_list">
+
+Programs list for {{channel.name}}:
+
+<ul>
+{% for program in programs %}
+<li onclick="javascript:videos('{{program}}');">{{program.name}}</li>
+{% endfor %}
+</ul>
+</div>

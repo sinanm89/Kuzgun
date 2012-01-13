@@ -1,0 +1,55 @@
+{% if user.is_authenticated %}
+{% block loggedin %}
+logged in as {{user}}
+{% if video.name %}
+<a href="/fav/{{program.name}}">fav</a>
+<a href="/like/{{video.name}}">like</a>
+{% endif %}
+<a href="/logout">logout</a>
+{% endblock %}
+
+{% else %}
+<div id="loginform">
+<form action="/login/" id="loginform" method="post" accept-charset="utf-8">
+<label for="username">Username</label><input type="text" name="username" value="" id="username" />
+<label for="password">Password</label><input type="password" name="password" value="" id="password" />
+{% csrf_token %}
+<p><input type="submit" value="Login"></p>
+</form>
+</div>
+<div id="loginmessage">
+</div>
+<script>
+  /* attach a submit handler to the form */
+  $("#loginform").submit(function(event) {
+
+    /* stop form from submitting normally */
+    event.preventDefault(); 
+        
+    /* get some values from elements on the page: */
+    var $form = $( this ),
+        u = $form.find( 'input[name="username"]' ).val(),
+        p = $form.find( 'input[name="password"]' ).val(),
+        c = $form.find( 'input[name="csrfmiddlewaretoken"]' ).val(),
+        
+        url = "/login/";
+
+    $.post( url, { username: u,  password: p, csrfmiddlewaretoken: c ,submit : "login"},
+      function( data ) {
+        if (data != "NOTOK"){
+          $( "#loginform" ).empty();
+             
+          location.reload();
+          
+
+        }
+        else{
+          console.log(data);
+          $( "#loginmessage" ).empty().append("Not true.");
+        }
+    }
+    );
+  });
+</script>
+{% endif %}
+

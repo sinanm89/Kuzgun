@@ -17,7 +17,14 @@
 	<!--VideoJS css -->
 	<link rel="stylesheet" href="/static/css/video-js.css" type="text/css" media="screen" title="Video JS" charset="utf-8">
 
-	
+
+	<!--JQuery js -->
+	<script src="/static/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Fonksiyonlar -->
+	<script src="/static/js/fonk.js" type="text/javascript" charset="utf-8"></script>
+
+
 	<title>	
 		{% block title%}
 			Kuzgun
@@ -35,19 +42,33 @@
 	{% block body %}
 	
 	<div id="top">
-	  TOP
+	  {% block top %}
+	  {% include "top.html" %}
+	  {% endblock %}
 	</div>
 	<div id="wrapper">
-	  <div id="video">
-	    {% block video %}
-	      Sagdan video sec
-	    {% endblock %}
-	  </div>
-	  <div id="sidebar">
-	    {% block sidebar %}
-	    {% include "sidebar.html" %}
-	    {% endblock %}
-	  </div>
+	    <div id="video">
+	      <div id="videos_list">
+
+	      {% block video %}
+	      <ul>
+		<div id="channels_list">
+		  Choose a network:
+		  {% for network in networks %}
+	          <li onclick="javascript:channels('{{network}}');">{{network.name}}</li> 
+		  {% endfor %}
+		</div>
+
+	      </ul>
+	      {% endblock %}
+	      </div>
+	    </div>
+	    <div id="sidebar">
+	      {% block sidebar %}
+	      {% include "sidebar.html" %}
+	      {% endblock %}
+	    </div>
+
 	</div>
 	{% endblock %}
   </div>

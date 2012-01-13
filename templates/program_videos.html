@@ -1,0 +1,10 @@
+Episodes list for {{program.name}}:
+
+<ul>
+{% for video in videos %}
+ <li onclick="javascript:video('{{video.program}}','{{video.episode_number}}')">
+   <img width="80" height="50" src="/media/{{video.thumbnail}}"> {{video.name}} View Count: {{ video.view_count }}
+</li>
+
+{% endfor %}
+</ul>
